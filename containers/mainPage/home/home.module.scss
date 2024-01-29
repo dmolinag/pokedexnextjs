@@ -1,0 +1,9 @@
+@import "../../../css/variables/colors.scss";
+@import "../../../css/variables/fontSizes.scss";
+
+.card__title {
+  color: $white;
+  font-size: $size-lg;
+  font-weight: $text-bold;
+  text-shadow: 2px 2px 4px $black;
+}
