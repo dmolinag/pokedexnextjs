@@ -59,7 +59,7 @@ export const Header = () => {
 	};
 
 	return (
-		<header className={'flex flex-row h-fit p-3.5 gap-10 justify-between'}>
+		<header className={'flex flex-row h-1/6 m-3.5 gap-10 justify-between'}>
 			<Link href={'/'}>
 				<Image src={PokemonLogo} alt={'pokemon'} />
 			</Link>

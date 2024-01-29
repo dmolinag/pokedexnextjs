@@ -1,5 +1,3 @@
-import { User } from '../containers/user/UserPage';
-
 const FAVORITE_POKEMONS = 'favorites';
 const USER_INFO = 'user';
 
@@ -21,15 +19,15 @@ export const getFavoritePokemons = (): number[] => {
 	return [];
 };
 
-export const setUserInfo = (user: User): void => {
+export const setUserInfo = (user: any): void => {
 	localStorage.setItem(USER_INFO, JSON.stringify(user));
 };
 
-export const getUserInfo = (): User | null => {
+export const getUserInfo = (): null => {
 	const userInfo = localStorage.getItem(USER_INFO);
 
 	if (userInfo !== null) {
-		const savedUserInfo: User = JSON.parse(userInfo);
+		const savedUserInfo = JSON.parse(userInfo);
 
 		if (savedUserInfo) {
 			return savedUserInfo;

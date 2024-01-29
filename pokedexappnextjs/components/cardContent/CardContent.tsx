@@ -68,7 +68,7 @@ export const CardContent = ({
 		if (type === 'horizontal') {
 			return (
 				<div
-					className={`${styles.cardContent} ${styles.horizontalCardContent}`}
+					className={`flex flex-col justify-around items-center relative ${styles.horizontalCardContent}`}
 				>
 					{renderPokemonCharacteristics(pokemon)}
 					<Image
@@ -83,7 +83,7 @@ export const CardContent = ({
 			);
 		} else {
 			return (
-				<div className={styles.cardContent}>
+				<div className='flex flex-col justify-around items-center relative'>
 					<ReactTooltip
 						id={`pokemon-tooltip-${pokemon.id}`}
 						place='top-end'
@@ -100,7 +100,7 @@ export const CardContent = ({
 						<BiInfoCircle size={'1.5rem'} />
 					</div>
 					<div
-						className={`${styles.cardContent} ${styles.verticalCardContent}`}
+						className={`flex flex-col justify-around items-center relative ${styles.verticalCardContent}`}
 					>
 						<Image
 							src={`${pokemon.id}.png`}

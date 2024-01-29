@@ -2,7 +2,6 @@
 
 .card {
 	border: 1px solid $white;
-	border-radius: 10px;
 }
 
 .sm {
@@ -10,20 +9,34 @@
 }
 
 .md {
-	width: 70%;
+	width: 80%;
 }
 
 .lg {
 	width: 80%;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
 	.sm {
 		width: 20%;
 	}
 
 	.md {
-		width: 25%;
+		width: 30%;
+	}
+
+	.lg {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.sm {
+		width: 20%;
+	}
+
+	.md {
+		width: 30%;
 	}
 
 	.lg {

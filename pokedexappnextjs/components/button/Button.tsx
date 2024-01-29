@@ -1,3 +1,5 @@
+'use client';
+
 import React, { MouseEvent } from 'react';
 import styles from './button.module.scss';
 
@@ -27,8 +29,6 @@ export const Button = ({
 	type = 'button',
 	...props
 }: Props) => {
-	let ref = React.useRef(null);
-
 	const className = `${getSizeClass(size)} ${getStyleClass(buttonStyle)} ${
 		props.addClassname && props.addClassname
 	}`;
@@ -42,7 +42,6 @@ export const Button = ({
 			role={props.role}
 			tabIndex={props.tabIndex}
 			style={{ background: props.bgColor, color: textColor && textColor }}
-			ref={ref}
 			type={type}
 		>
 			{props.children}

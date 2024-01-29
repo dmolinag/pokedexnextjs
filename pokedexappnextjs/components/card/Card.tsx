@@ -9,7 +9,7 @@ type CardProps = {
 type CardSize = 'sm' | 'md' | 'lg';
 
 export const Card = ({ size = 'md', backgroundColor, children }: CardProps) => {
-	const className = `${styles.card} ${getSizeClass(size)} `;
+	const className = `rounded-xl ${styles.card} ${getSizeClass(size)} `;
 
 	return (
 		<div className={className} style={{ backgroundColor: backgroundColor }}>

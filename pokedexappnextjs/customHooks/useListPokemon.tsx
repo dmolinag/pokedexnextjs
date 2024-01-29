@@ -1,29 +1,29 @@
-'use client'
+'use client';
 
 import { useEffect, useState } from 'react';
 import { fetchPokemonList } from '../api/fetchPokemonList';
-import { usePokemonsListContext, useToastContext } from '../utils';
+import { useToastContext } from '../utils';
 
 export function useListPokemon() {
-	const { pokemonList, definePokemonList } = usePokemonsListContext();
 	const { showToast } = useToastContext();
 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [pokemons, setPokemons] = useState<any[]>([]);
 
 	const queryPokemons = async (page: number, isFirstPageOnly = false) => {
-  
 		setIsLoading(true);
 		const response = await fetchPokemonList(page + 1);
 
 		if (!response.error) {
 			let newPokemonList = !isFirstPageOnly
-				? [...pokemonList.concat(response.pokemonList)]
+				? [...pokemons.concat(response.pokemonList)]
 				: response.pokemonList;
 
-			definePokemonList(newPokemonList, '');
+			setPokemons(newPokemonList);
 			setIsLoading(false);
 		} else {
-			definePokemonList([], '');
+			setPokemons([]);
+
 			setIsLoading(false);
 			showToast({
 				isDisplay: true,
@@ -38,10 +38,10 @@ export function useListPokemon() {
 			const response = await fetchPokemonList(1);
 
 			if (!response.error) {
-				definePokemonList(response.pokemonList, '');
+				setPokemons(response.pokemonList);
 				setIsLoading(false);
 			} else {
-				definePokemonList([], '');
+				setPokemons([]);
 				setIsLoading(false);
 				showToast({
 					isDisplay: true,
@@ -52,5 +52,5 @@ export function useListPokemon() {
 		})();
 	}, []);
 
-	return { isLoading, queryPokemons };
+	return { isLoading, queryPokemons, pokemons };
 }
