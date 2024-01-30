@@ -1,0 +1,171 @@
+@import '../../css/variables/colors.scss';
+@import '../../css/variables/fontSizes.scss';
+
+.pokemonModal {
+	width: 100%;
+	height: 70%;
+	color: $white;
+	transform: translate(0, 10%);
+	flex-direction: column;
+
+	&[data-entering] {
+		animation: zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	&[data-exiting] {
+		animation: fade 150ms reverse ease-in;
+	}
+
+	&__dialog {
+		flex-direction: column;
+		padding: 10px;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes zoom {
+	from {
+		transform: scale(0.8);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+.cardContent {
+	width: 100%;
+
+	&__pokemonInfo {
+		top: -13rem;
+
+		&__number {
+			color: $white;
+			font-size: $size-md;
+			font-weight: $text-bold;
+			text-shadow: 2px 2px 4px $black;
+		}
+
+		&__name {
+			color: $white;
+			font-size: $size-lg;
+			font-weight: $text;
+			text-shadow: 2px 2px 4px $black;
+		}
+	}
+
+	&__image {
+		top: -13rem;
+	}
+
+	&__characteristics {
+		color: $white;
+		font-size: $size-sm;
+		font-weight: $text;
+		text-shadow: 2px 2px 4px $black;
+
+		.value {
+			font-weight: $text-bold;
+		}
+	}
+}
+
+.stats {
+	width: 100%;
+	top: -14rem;
+	margin: 0.5rem auto;
+
+	&__stat {
+		display: grid;
+		grid-template-columns: 35% 5% 60%;
+		margin-bottom: 5px;
+		font-weight: $text-bold;
+		font-size: $size-sm;
+		gap: 15px;
+	}
+}
+
+@keyframes meterAnimation {
+	from {
+		background: #fff;
+	}
+}
+
+.meter {
+	animation-name: meterAnimation;
+	animation-duration: 0.7s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.pokemonModal {
+		width: 70%;
+		height: 60%;
+
+		&__dialog {
+			&__container {
+				flex-direction: row;
+			}
+		}
+	}
+
+	.cardContent {
+		width: 50%;
+
+		&__pokemonInfo {
+			top: 0rem;
+		}
+
+		&__image {
+			top: 0rem;
+		}
+	}
+
+	.stats {
+		width: 50%;
+		top: 4.5rem;
+		height: fit-content;
+		margin: 0 2rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.pokemonModal {
+		width: 70%;
+		height: 50%;
+
+		&__dialog {
+			&__container {
+				flex-direction: row;
+        height: 100%;
+			}
+		}
+	}
+
+	.cardContent {
+		width: 50%;
+
+		&__pokemonInfo {
+			top: -5rem;
+		}
+
+		&__image {
+			top: -5rem;
+		}
+	}
+
+	.stats {
+		width: 50%;
+		top: 4.5rem;
+		height: fit-content;
+		margin: 0 2rem;
+	}
+}

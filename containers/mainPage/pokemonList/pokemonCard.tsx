@@ -17,6 +17,7 @@ import styles from './pokemonList.module.scss';
 import { useState } from 'react';
 import { Button, Card, CardContent } from '../../../components';
 import _ from 'lodash';
+import { PokemonModal } from '@/components/pokemonDetailsModal/pokemonDetailsModal';
 // import { PokemonTypeModal } from '../../../components/pokemonTypeModal/PokemonTypeModal';
 
 interface PokemonCardProp {
@@ -84,11 +85,11 @@ export const PokemonCard = ({ pokemon }: PokemonCardProp) => {
 				/>
 			</Card>
 
-			{/* <PokemonModal
+			<PokemonModal
 				pokemon={selectedPokemon}
 				isOpen={isPokemonDetailsModalOpen}
 				setOpen={() => setIsPokemonDetailsModalOpen(false)}
-			/> */}
+			/>
 
 			{/* <PokemonTypeModal
 				type={pokemonTypeAgainst}
