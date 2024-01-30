@@ -1,7 +1,12 @@
 import MainPage from '@/containers/mainPage/MainPage';
+import { PokemonListProvider } from '@/utils';
 
 const Home = () => {
-	return <MainPage />;
+	return (
+		<PokemonListProvider>
+			<MainPage />
+		</PokemonListProvider>
+	);
 };
 
 export default Home;

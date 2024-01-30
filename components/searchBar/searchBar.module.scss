@@ -1,55 +1,53 @@
-@import "../../css/variables/colors.scss";
-@import "../../css/variables/fontSizes.scss";
+@import '../../css/variables/colors.scss';
+@import '../../css/variables/fontSizes.scss';
 
 .searchBar {
-  margin: 2rem 3rem;
+	margin: 2rem 3rem;
 
-  &__searchByType {
-    &__title {
-      color: $white;
-      font-size: $size-lg;
-      font-weight: $text;
-    }
+	&__searchType_title {
+		color: $white;
+		font-size: $size-lg;
+		font-weight: $text;
+	}
 
-    &__pokemonTypesBadge {
-      transition: opacity 0.8s;
-    }
+	&__searchType_pokemonTypesBadge {
+		transition: opacity 0.8s;
+	}
 
-    &__pokemonTypesBadge:hover {
-      opacity: 0.6;
-    }
+	&__searchType_pokemonTypesBadge:hover {
+		opacity: 0.6;
+	}
 
-    &__pokemonTypes::-webkit-scrollbar {
-      width: 1em;
-    }
+	&__searchType_pokemonTypes::-webkit-scrollbar {
+		width: 1em;
+	}
 
-    &__pokemonTypes::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    }
+	&__searchType_pokemonTypes::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
 
-    &__pokemonTypes::-webkit-scrollbar-thumb {
-      background-color: darkgrey;
-      outline: 1px solid slategrey;
-      border-radius: 10px;
-    }
-  }
+	&__searchType_pokemonTypes::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+		border-radius: 10px;
+	}
 
-  &__searchByName {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	&__searchByName {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-    &__title {
-      color: $white;
-      font-size: $size-lg;
-      font-weight: $text;
-      margin: 1rem;
-    }
-  }
+		&__title {
+			color: $white;
+			font-size: $size-lg;
+			font-weight: $text;
+			margin: 1rem;
+		}
+	}
 }
 
 @media screen and (min-width: 992px) {
-  .searchBar {
-    margin: 2rem 7rem;
-  }
+	.searchBar {
+		margin: 2rem 7rem;
+	}
 }

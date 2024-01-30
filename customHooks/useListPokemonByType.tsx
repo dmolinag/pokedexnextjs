@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 import { usePokemonsListContext, useToastContext } from '../utils';
@@ -14,7 +14,6 @@ export function useListPokemonByType() {
 		setIsLoading(true);
 
 		const response = await fetchPokemonByType(type, pokemonAmount);
-
 		if (!response.error) {
 			definePokemonList(response.pokemonList, type, true);
 			setIsLoading(false);

@@ -6,15 +6,21 @@ import styles from '../searchBar.module.scss';
 import { useListPokemon, useListPokemonByType } from '../../../customHooks';
 import { POKEMONS_PER_PAGE, pokemonTypes } from '../../../utils';
 
-export const SearchByType = () => {
-	const [selectedType, setSelectedType] = React.useState<string>('');
+interface SearchByTypeProps {
+	handlePage: (page: number) => void;
+}
+
+export const SearchByType = ({ handlePage }: SearchByTypeProps) => {
+	const [selectedType, setSelectedType] = React.useState<string | undefined>(
+		undefined
+	);
 	const { queryPokemonsByType } = useListPokemonByType();
 	const { queryPokemons } = useListPokemon();
 
-	const onSearchByType = async (typeName: any) => {
+	const onSearchByType = async (typeName: string | undefined) => {
 		setSelectedType(typeName);
 		if (typeName && typeName !== selectedType) {
-			// handlePage(1);
+			handlePage(1);
 			queryPokemonsByType(typeName, POKEMONS_PER_PAGE);
 		} else if (!typeName) {
 			queryPokemons(0, true);
@@ -25,7 +31,7 @@ export const SearchByType = () => {
 		<div
 			className={`flex flex-col align-center ${styles.searchBar__searchByType}`}
 		>
-			<h2 className={`m-4 ${styles.searchBar__searchByType__title}`}>
+			<h2 className={`m-4 ${styles.searchBar__searchType_title}`}>
 				Search by type
 			</h2>
 
@@ -41,7 +47,7 @@ export const SearchByType = () => {
 								tabIndex={false}
 								button={true}
 								handleClick={onSearchByType}
-								addClassname={styles.searchBar__searchByType__pokemonTypesBadge}
+								addClassname={styles.searchBar__searchType_pokemonTypesBadge}
 							/>
 						</li>
 					);
