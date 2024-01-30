@@ -49,8 +49,7 @@ export const PokemonBadgeType = ({
 				name={name}
 				addClassname={addClassname}
 			>
-				<Image src={getBadgeImage(name)} alt={name}             width={100}
-            height={100}/>
+				<Image src={getBadgeImage(name)} alt={name} width={100} height={100} />
 				{name}
 			</Button>
 		);
@@ -60,11 +59,16 @@ export const PokemonBadgeType = ({
 		<div
 			tabIndex={tabIndex ? 0 : -1}
 			style={{ background: color }}
-			className={styles.badge}
+			className={`flex items-center gap-2 py-1 px-2 rounded-lg shrink-0 leading-6 capitalize cursor-pointer ${styles.badge}`}
 			onClick={handleOnClick}
 		>
-			<Image src={getBadgeImage(name)} alt={name}             width={100}
-            height={100}/>
+			<Image
+				src={getBadgeImage(name)}
+				alt={name}
+				width={100}
+				height={100}
+				className='w-4 h-4'
+			/>
 			{name}
 		</div>
 	);

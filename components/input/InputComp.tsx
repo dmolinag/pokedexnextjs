@@ -18,7 +18,7 @@ export const InputComp = ({ disabled = false, ...props }: InputCompProps) => {
 	return (
 		<TextField
 			isRequired={props.isRequired}
-			className={`${mClassname} ${styles.container}`}
+			className={`flex flex-row items-center gap-1.5 ${mClassname} ${styles.container}`}
 			aria-label='search term'
 		>
 			{props.label && <label>{props.label}:</label>}
@@ -27,9 +27,10 @@ export const InputComp = ({ disabled = false, ...props }: InputCompProps) => {
 				placeholder={props.label}
 				value={props.value}
 				data-testid={'Search by name'}
+        className='w-full h-10 text-3xl rounded-lg'
 			/>
 			{props.loading && (
-				<div className={styles.container__spinner} data-testid='spinner'></div>
+				<div className={styles.spinner} data-testid='spinner'></div>
 			)}
 		</TextField>
 	);

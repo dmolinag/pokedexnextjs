@@ -11,7 +11,7 @@ export const SearchBar = ({ handlePage }: SearchBarProp) => {
 		<section className={`flex flex-col gap-8 ${styles.searchBar}`}>
 			<SearchByType handlePage={handlePage} />
 
-			{/* <SearchByName /> */}
+			<SearchByName />
 		</section>
 	);
 };

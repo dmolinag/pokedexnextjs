@@ -8,10 +8,9 @@ import { Button } from '../../../components';
 import { PokemonCard } from './pokemonCard';
 import { SearchBar } from '@/components/searchBar/SearchBar';
 import { POKEMONS_PER_PAGE, usePokemonsListContext } from '@/utils';
-import { LoadingSpinner } from '@/components/loading/LoadingSpinner';
 
 export const PokemonList = () => {
-	const { queryPokemons, isLoading } = useListPokemon();
+	const { queryPokemons } = useListPokemon();
 	const { queryPokemonsByType } = useListPokemonByType();
 	const { pokemonList, pokemonType, filtered } = usePokemonsListContext();
 

@@ -23,17 +23,15 @@ export const SearchByType = ({ handlePage }: SearchByTypeProps) => {
 			handlePage(1);
 			queryPokemonsByType(typeName, POKEMONS_PER_PAGE);
 		} else if (!typeName) {
-			queryPokemons(0, true);
+			queryPokemons(1, true);
 		}
 	};
 
 	return (
 		<div
-			className={`flex flex-col align-center ${styles.searchBar__searchByType}`}
+			className={`flex flex-col items-center ${styles.searchBar__searchByType}`}
 		>
-			<h2 className={`m-4 ${styles.searchBar__searchType_title}`}>
-				Search by type
-			</h2>
+			<h2 className={`m-4 ${styles.searchBar__title}`}>Search by type</h2>
 
 			<ul
 				className={'flex flex-row gap-1 w-full overflow-x-scroll list-none'}

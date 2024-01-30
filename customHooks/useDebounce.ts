@@ -18,7 +18,7 @@ export function useDebounce() {
         clearTimeout(delayDebounceFn);
       }, 5000);
     } else if (searchTerm.length === 0) {
-      queryPokemons(0, true);
+      queryPokemons(1, true);
       setQueryLoading(false);
     } else {
       setQueryLoading(false);

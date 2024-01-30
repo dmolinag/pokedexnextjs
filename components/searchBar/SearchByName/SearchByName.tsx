@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { InputComp } from '../..';
 import styles from '../searchBar.module.scss';
@@ -11,13 +13,9 @@ export const SearchByName = () => {
 	};
 
 	return (
-		<section className={styles.searchBar}>
-			<div className={styles.searchBar__searchByName}>
-				<h2 className={styles.searchBar__searchByName__title}>
-					Search by name
-				</h2>
-				<InputComp onChange={handleSearch} loading={queryLoading} />
-			</div>
-		</section>
+		<div className='flex flex-col items-center'>
+			<h2 className={`m-4 ${styles.searchBar__title}`}>Search by name</h2>
+			<InputComp onChange={handleSearch} loading={queryLoading} />
+		</div>
 	);
 };
