@@ -107,7 +107,7 @@ export const CardContent = ({
 						<Image
 							src={`${pokemon.id}.png`}
 							alt={pokemon.name}
-							className={styles.horizontalCardContent__image}
+							className={styles.verticalCardContent__image}
 							width={100}
 							height={100}
 							loader={imageLoader}

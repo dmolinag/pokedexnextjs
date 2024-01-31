@@ -16,7 +16,7 @@ export const PokemonModal = ({
 	isOpen,
 	setOpen,
 }: PokemonModalProps) => {
-	const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
+	const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png?w=${100}&q=${100}`;
 
 	return (
 		<>
