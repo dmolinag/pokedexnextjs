@@ -4,7 +4,7 @@ import React, { MouseEvent } from 'react';
 import styles from './button.module.scss';
 
 type ButtonStyle = 'primary' | 'secondary' | 'badge';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 
 type Props = {
 	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -53,6 +53,10 @@ Button.displayName = 'Button';
 
 function getSizeClass(size?: ButtonSize | null): string {
 	switch (size) {
+		case 'xs':
+			return styles.xs;
+		case 'sm':
+			return styles.sm;
 		case 'md':
 			return styles.md;
 		case 'lg':
