@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { PokemonObj } from '../../../types/Pokemon';
 import { Card, CardContent } from '../../../components';

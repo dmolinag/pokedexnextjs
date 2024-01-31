@@ -25,7 +25,7 @@ export const PokemonModal = ({
 					isDismissable
 					isOpen={isOpen}
 					onOpenChange={() => setOpen(isOpen)}
-					className={`rounded-md p-2.5 outline-none bg-black-500/50 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ${styles.pokemonModal}`}
+					className={`rounded-md p-2.5 outline-none bg-black/50 shadow-[0_8px_20px_rgba(0,0,0,0.1)] ${styles.pokemonModal}`}
 				>
 					<Dialog
 						className={`outline-none flex w-full ${styles.pokemonModal__dialog__container} ${styles.pokemonModal__dialog}`}

@@ -134,7 +134,7 @@ export const renderPokemonCharacteristics = (
 			<div className={styles.cardContent__pokemonInfoId}>
 				{formatPokemonId(pokemon.id)}
 			</div>
-			<div className={styles.cardContent__pokemonInfoName}>{pokemon.name}</div>
+			<div className={`capitalize ${styles.cardContent__pokemonInfoName}`}>{pokemon.name}</div>
 
 			<div className={`flex gap-2 ${styles.cardContent__badgeList}`}>
 				{pokemon.types.map(({ type }: any) => (

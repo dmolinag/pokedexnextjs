@@ -28,9 +28,7 @@ export const SearchByType = ({ handlePage }: SearchByTypeProps) => {
 	};
 
 	return (
-		<div
-			className={`flex flex-col items-center`}
-		>
+		<div className={`flex flex-col items-center`}>
 			<h2 className={`m-4 ${styles.searchBar__title}`}>Search by type</h2>
 
 			<ul

@@ -2,33 +2,19 @@
 
 import { PokemonObj } from '../../../types/Pokemon';
 import { getPokemonColor } from '../../../utils/pokemonFunctions';
-import {
-	usePokemonsListContext,
-	getFavoritePokemons,
-	setFavoritePokemons,
-	POKEMONS_PER_PAGE,
-} from '../../../utils';
-import {
-	INITIAL_POKEMON,
-	useListPokemon,
-	useListPokemonByType,
-} from '../../../customHooks';
-import styles from './pokemonList.module.scss';
+import { getFavoritePokemons, setFavoritePokemons } from '../../../utils';
+import { INITIAL_POKEMON } from '../../../customHooks';
 import { useState } from 'react';
-import { Button, Card, CardContent } from '../../../components';
+import { Card, CardContent } from '../../../components';
 import _ from 'lodash';
 import { PokemonModal } from '@/components/pokemonDetailsModal/pokemonDetailsModal';
-// import { PokemonTypeModal } from '../../../components/pokemonTypeModal/PokemonTypeModal';
+import { PokemonTypeModal } from '@/components/pokemonTypeModal/PokemonTypeModal';
 
 interface PokemonCardProp {
 	pokemon: PokemonObj;
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProp) => {
-	const { pokemonList, filtered, pokemonType } = usePokemonsListContext();
-	const { queryPokemons } = useListPokemon();
-	const { queryPokemonsByType } = useListPokemonByType();
-
 	const [isPokemonDetailsModalOpen, setIsPokemonDetailsModalOpen] =
 		useState<boolean>(false);
 	const [isPokemonTypeModalOpen, setIsPokemonTypeModalOpen] =
@@ -91,17 +77,11 @@ export const PokemonCard = ({ pokemon }: PokemonCardProp) => {
 				setOpen={() => setIsPokemonDetailsModalOpen(false)}
 			/>
 
-			{/* <PokemonTypeModal
+			<PokemonTypeModal
 				type={pokemonTypeAgainst}
 				isOpen={isPokemonTypeModalOpen}
 				setOpen={() => setIsPokemonTypeModalOpen(false)}
-			/> */}
-
-			{/* <div className={styles.pokemonList__button}>
-				<Button buttonStyle='primary' onClick={handleLoadMore}>
-					Load more
-				</Button>
-			</div> */}
+			/>
 		</>
 	);
 };

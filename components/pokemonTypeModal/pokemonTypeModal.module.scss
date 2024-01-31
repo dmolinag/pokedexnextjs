@@ -1,0 +1,62 @@
+@import '../../css/variables/colors.scss';
+
+.modal {
+	width: 100%;
+
+	&__container {
+		color: $white;
+		flex-direction: column;
+
+		&__selectedType {
+			color: $white;
+			border: 1px solid $white;
+			flex-direction: row;
+		}
+
+		&__otherTypes {
+			flex-direction: row;
+
+			&__types {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.modal {
+		width: 80%;
+		height: 40%;
+
+		&__container {
+			height: 100%;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.modal {
+		width: 60%;
+		height: 50%;
+
+		&__container {
+			flex-direction: row;
+			height: 100%;
+
+			&__selectedType {
+				flex-direction: column;
+				width: 20%;
+			}
+
+			&__otherTypes {
+				flex-direction: column;
+				width: 20%;
+
+				&__types {
+					flex-direction: column;
+				}
+			}
+		}
+	}
+}
