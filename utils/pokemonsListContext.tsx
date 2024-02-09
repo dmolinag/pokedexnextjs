@@ -23,7 +23,7 @@ const pokemonListContext = React.createContext<PokemonListContext>({
 });
 
 export const PokemonListProvider = ({ children }: any) => {
-	const [pokemonList, setPokemonList] = React.useState<PokemonObj[]>([]);
+	const [pokemonList, setPokemonList] = React.useState<Array<PokemonObj>>([]);
 	const [filtered, setFiltered] = React.useState<boolean>(false);
 	const [pokemonType, setPokemonType] = React.useState<string>('');
 

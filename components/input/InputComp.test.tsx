@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { InputComp } from './InputComp';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 const onChangeSpy = jest.fn();
 const defaultProps = {
@@ -15,22 +16,23 @@ const renderComp = (props = defaultProps) => {
 };
 
 describe('Input component', () => {
-	it('should render and test input component', async () => {
-		renderComp();
-
-		const input = screen.getByTestId('Search by name');
-		await userEvent.click(input);
-
-		await userEvent.paste(input, 'Test');
-
-		expect(onChangeSpy).toBeCalledWith('Test');
-	});
 	it('should render loading', async () => {
 		const newProps = { ...defaultProps, loading: true };
 		renderComp(newProps);
 
 		expect(screen.getByTestId('spinner')).toBeVisible();
 	});
+
+	it('should update input field value after typing', async () => {
+		renderComp();
+
+		const input = screen.getByTestId('Search by name');
+		await userEvent.click(input);
+		await userEvent.paste('Test');
+
+		expect(onChangeSpy).toHaveBeenCalledWith('Test');
+	});
+
 	it('should render label', async () => {
 		renderComp();
 

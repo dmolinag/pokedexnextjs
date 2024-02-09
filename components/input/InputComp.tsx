@@ -27,10 +27,10 @@ export const InputComp = ({ disabled = false, ...props }: InputCompProps) => {
 				placeholder={props.label}
 				value={props.value}
 				data-testid={'Search by name'}
-        className='w-full h-10 text-3xl rounded-lg'
+				className='w-full h-10 text-3xl rounded-lg text-black'
 			/>
 			{props.loading && (
-				<div className={styles.spinner} data-testid='spinner'></div>
+				<div className={`w-5 h-4 rounded ${styles.spinner}`} data-testid='spinner'></div>
 			)}
 		</TextField>
 	);

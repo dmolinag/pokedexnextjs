@@ -2,11 +2,8 @@
 @import "../../css/variables/colors.scss";
 
 .spinner {
-    width: 20px;
-    height: 17px;
     border: 8px solid $light-gray;
     border-top: 8px solid $light-black;
-    border-radius: 50%;
     animation: spinner 1.5s linear infinite;
   }
 

@@ -1,3 +1,5 @@
+import { User } from "@/containers";
+
 const FAVORITE_POKEMONS = 'favorites';
 const USER_INFO = 'user';
 
@@ -20,17 +22,21 @@ export const getFavoritePokemons = (): number[] => {
 };
 
 export const setUserInfo = (user: any): void => {
-	localStorage.setItem(USER_INFO, JSON.stringify(user));
+	if (typeof window !== 'undefined') {
+		localStorage.setItem(USER_INFO, JSON.stringify(user));
+	}
 };
 
-export const getUserInfo = (): null => {
-	const userInfo = localStorage.getItem(USER_INFO);
+export const getUserInfo = (): User | null => {
+	if (typeof window !== 'undefined') {
+		const userInfo = localStorage.getItem(USER_INFO);
 
-	if (userInfo !== null) {
-		const savedUserInfo = JSON.parse(userInfo);
+		if (userInfo !== null) {
+			const savedUserInfo: User = JSON.parse(userInfo);
 
-		if (savedUserInfo) {
-			return savedUserInfo;
+			if (savedUserInfo) {
+				return savedUserInfo;
+			}
 		}
 	}
 
